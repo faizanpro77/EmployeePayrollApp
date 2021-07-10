@@ -59,7 +59,7 @@ function save() {
 }
 
 let getSelectedValues = (property) => {
-    
+
     let allItems = document.querySelectorAll(property);
     let selectedItems = [];
     allItems.forEach(item => {
