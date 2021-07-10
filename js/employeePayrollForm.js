@@ -48,9 +48,14 @@ class EmployeePayrollData{
     get startDate(){
         return this._startDate;
     }
+
     set startDate(startDate){
-        this._startDate = startDate;
+        if (startDate <= new Date())
+            this._startDate = startDate;
+        else
+            throw 'StartDate is Invalid!';
     }
+
 
     toString() {
         const options = {
