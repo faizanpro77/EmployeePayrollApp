@@ -33,7 +33,6 @@ const save = () => {
     }
 }
 
-
 function createAndUpdateStorage(employeePayrollData) {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if(employeePayrollList!=undefined)
@@ -80,4 +79,31 @@ const getSelectedValues = (property) => {
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
+}
+
+//reset the form on clicking reset button
+const resetForm = () => {
+    setValue("#name", "");
+    setValue("#salary","");
+    setTextValue(".salary-output", getInputValueById("#salary"));
+    setValue("#notes","");
+    setValue("#day","1");
+    setValue("#month","January");
+    setValue("#year","2020");
+    unsetSelectedValues("[name = profile]");
+    unsetSelectedValues("[name = gender]");
+    unsetSelectedValues("[name = department]");
+
+}
+
+const unsetSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+
+const setValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.value = value;
 }
