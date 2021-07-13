@@ -6,4 +6,3 @@ const formatDate = (date) => {
     const empDate = !startDate ? "undefined" : startDate.toLocaleDateString("en-IN", options);
     return empDate;
 }
-
